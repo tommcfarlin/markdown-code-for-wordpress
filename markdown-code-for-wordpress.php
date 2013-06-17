@@ -12,9 +12,9 @@
  *
  * @wordpress-plugin
  * Plugin Name: Markdown Code For WordPress
- * Plugin URI:  http://tommcfarlin.com/markdown-code/
+ * Plugin URI:  http://tommcfarlin.com/markdown-code-for-wordpress/
  * Description: A simple WordPress plugin for replacing backticks with code tags in the content of posts, pages, and other post types.
- * Version:     0.1.0
+ * Version:     0.2.0
  * Author:      Tom McFarlin
  * Author URI:  http://tommcfarlin.com/
  * License:     GPL-2.0+
@@ -32,6 +32,7 @@ function mdc_the_content( $content ) {
 	return preg_replace_callback( "/[`].*?[`]/", 'mdc_code_tags', $content );
 } // mdc_the_content
 add_filter( 'the_content', 'mdc_the_content' );
+add_filter( 'comment_text', 'mdc_the_content' );
 
 /**
  * Replaces the backticks (`) with proper HTML <code></code> tags.
