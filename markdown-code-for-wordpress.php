@@ -29,18 +29,7 @@
  * @return string               The content of the post with the backticks replaced with code tags.
  */
 function mdc_the_content( $content ) {
-	return preg_replace_callback( "/[`].*?[`]/", 'mdc_code_tags', $content );
+	return preg_replace( '/`(.*?)`/', '<code>$1</code>', $content );
 } // mdc_the_content
 add_filter( 'the_content', 'mdc_the_content' );
 add_filter( 'comment_text', 'mdc_the_content' );
-
-/**
- * Replaces the backticks (`) with proper HTML <code></code> tags.
- *
- * @access public
- * @param  mixed    $arr_content    The array of the matched string from the regular expression
- * @return string                   The content of the post with the backticks replaced with code tags.
- */
-function mdc_code_tags( $arr_content ) {
-	return preg_replace( '/`/', '</code>', preg_replace( '/`/', '<code>', $arr_content[0], 1 ), 1 );
-} // end mdc_code_tags
