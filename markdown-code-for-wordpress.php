@@ -2,7 +2,8 @@
 /**
  * Markdown Code For WordPress
  *
- * A simple WordPress plugin for replacing backticks with `code` tags in the content of posts, pages, and other post types.
+ * A simple WordPress plugin for replacing backticks with `code`, asterisks with emphasis, and double-asterisks
+ * with strong tags in the content of posts, pages, and other post types.
  *
  * @package     MDC
  * @author      Tom McFarlin <tom@tommcfarlin.com>
@@ -13,12 +14,23 @@
  * @wordpress-plugin
  * Plugin Name: Markdown Code For WordPress
  * Plugin URI:  http://tommcfarlin.com/markdown-code-for-wordpress/
- * Description: A simple WordPress plugin for replacing backticks with code tags in the content of posts, pages, and other post types.
- * Version:     0.2.0
+ * Description: A simple WordPress plugin for replacing backticks, asterisks, and double-asterisks with code, emphasis, and strong tags in your content and comments.
+ * Version:     0.3.0
  * Author:      Tom McFarlin
  * Author URI:  http://tommcfarlin.com/
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+
+/**
+ * TODO
+ *
+ * At this point, the plugin is getting to perform multiple string operations when it first started out focusing
+ * only on code tags. Eventually, this will need to do two things:
+ *
+ * 1. Write the modified data to the database to improve retrieval and performance
+ * 2. Consider going the parsing route (though I do feel that's a bit heavy handed for such a small subset of Markdown)
+ *
  */
 
 /**
@@ -29,7 +41,13 @@
  * @return string               The content of the post with the backticks replaced with code tags.
  */
 function mdc_the_content( $content ) {
-	return preg_replace( '/`(.*?)`/', '<code>$1</code>', $content );
+
+	$content = preg_replace( '/`(.*?)`/', '<code>$1</code>', $content );
+	$content = preg_replace( '/\*\*(.+?)\*\*/s', '<strong>$1</strong>', $content );
+	$content = preg_replace( '/\*([^\*]+)\*/', '<em>$1</em>', $content );
+
+	return $content;
+
 } // mdc_the_content
 add_filter( 'the_content', 'mdc_the_content' );
 add_filter( 'comment_text', 'mdc_the_content' );
