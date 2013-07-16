@@ -1,6 +1,7 @@
 # Markdown Code For WordPress
 
-A simple WordPress plugin for replacing backticks with `code` tags in the content of posts, pages, and other post types.
+A simple WordPress plugin for replacing backticks with `code`, asterisks with emphasis, and double-asterisks
+with strong tags in the content of posts, pages, and other post types.
 
 ## Contents
 
