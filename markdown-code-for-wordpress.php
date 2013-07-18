@@ -43,8 +43,8 @@
 function mdc_the_content( $content ) {
 
 	$content = preg_replace( '/`(.*?)`/', '<code>$1</code>', $content );
-	$content = preg_replace( '/\*\*(.+?)\*\*/s', '<strong>$1</strong>', $content );
-	$content = preg_replace( '/\*([^\*]+)\*/', '<em>$1</em>', $content );
+	$content = preg_replace( '/\*\*([^*\s].*?)\*\*/s', '<strong>$1</strong>', $content );
+	$content = preg_replace( '/\*([^*\s].*?)\*/', '<em>$1</em>', $content );
 
 	return $content;
 
