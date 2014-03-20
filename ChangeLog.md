@@ -1,5 +1,9 @@
 # 0.5.0 (20 March 2014)
 
+* Updating the version tag in the plugin header file to the proper version
+
+# 0.5.0 (20 March 2014)
+
 * Removing the support for markdown in comments since this is now support by [Jetpack](http://jetpack.me/2014/01/31/jetpack-2-8-introducing-markdown-and-improving-monitor/)
 * Adding support for [GitHub Updater](https://github.com/afragen/github-updater)
 

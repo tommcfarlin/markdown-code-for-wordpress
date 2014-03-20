@@ -15,7 +15,7 @@
  * Plugin Name: Markdown Code For WordPress
  * Plugin URI:  http://tommcfarlin.com/markdown-code-for-wordpress/
  * Description: A simple WordPress plugin for replacing backticks, asterisks, and double-asterisks with code, emphasis, and strong tags in your content and comments.
- * Version:     0.4.0
+ * Version:     0.5.1
  * Author:      Tom McFarlin
  * Author URI:  http://tommcfarlin.com/
  * License:     GPL-2.0+
