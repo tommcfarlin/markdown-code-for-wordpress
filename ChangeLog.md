@@ -1,3 +1,8 @@
+# 0.4.0 (20 March 2014)
+
+* Removing the support for markdown in comments since this is now support by [Jetpack](http://jetpack.me/2014/01/31/jetpack-2-8-introducing-markdown-and-improving-monitor/)
+* Adding support for [GitHub Updater](https://github.com/afragen/github-updater)
+
 # 0.3.0 (16 July 2013)
 
 * Merged pull request to simplify the regular expressions from using a callback
