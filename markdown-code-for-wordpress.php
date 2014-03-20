@@ -2,24 +2,25 @@
 /**
  * Markdown Code For WordPress
  *
- * A simple WordPress plugin for replacing backticks with `code`, asterisks with emphasis, and double-asterisks
+ * A simple WordPress plugin for replacing backticks with code, asterisks with emphasis, and double-asterisks
  * with strong tags in the content of posts, pages, and other post types.
  *
  * @package     MDC
  * @author      Tom McFarlin <tom@tommcfarlin.com>
  * @license     GPL-2.0+
  * @link        http://tommcfarlin.com/markdown-code-for-wordpress/
- * @copyright   2013 Tom McFarlin
+ * @copyright   2013 - 2104 Tom McFarlin
  *
  * @wordpress-plugin
  * Plugin Name: Markdown Code For WordPress
  * Plugin URI:  http://tommcfarlin.com/markdown-code-for-wordpress/
  * Description: A simple WordPress plugin for replacing backticks, asterisks, and double-asterisks with code, emphasis, and strong tags in your content and comments.
- * Version:     0.3.0
+ * Version:     0.4.0
  * Author:      Tom McFarlin
  * Author URI:  http://tommcfarlin.com/
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * GitHub Plugin URI: tommcfarlin/markdown-code-for-wordpress
  */
 
 /**
@@ -50,4 +51,3 @@ function mdc_the_content( $content ) {
 
 } // mdc_the_content
 add_filter( 'the_content', 'mdc_the_content' );
-add_filter( 'comment_text', 'mdc_the_content' );
