@@ -1,4 +1,4 @@
-# 0.5.0 (20 March 2014)
+# 0.5.1 (20 March 2014)
 
 * Updating the version tag in the plugin header file to the proper version
 
